@@ -3,7 +3,8 @@
     'name': "tiendas",
 
     'summary': """
-        Lista de las tiendas que almacenan y desde las que también se reparte.""",
+        Aquí encontrarás las mejores tiendas de fruta.
+        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
         Conjunto de tiendas a las que suministramos nuestras mejores frutas.
@@ -31,5 +32,4 @@
     'demo': [
         'demo/demo.xml',
     ],
-    'application' : True,
 }
