@@ -3,8 +3,7 @@
     'name': "tiendas",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Lista de las tiendas que almacenan y desde las que también se reparte.""",
 
     'description': """
         Conjunto de tiendas a las que suministramos nuestras mejores frutas.
@@ -32,4 +31,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application' : True,
 }
