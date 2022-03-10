@@ -3,8 +3,7 @@
     'name': "tiendas",
 
     'summary': """
-        Lista de tiendas que tenemos.
-        subtitle on modules listing or apps.openerp.com""",
+        Lista de tiendas que tenemos.""",
 
     'description': """
         Conjunto de tiendas a las que suministramos nuestras mejores frutas.
