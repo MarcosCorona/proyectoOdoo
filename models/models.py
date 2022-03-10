@@ -2,6 +2,7 @@ import string
 from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
+
 class tienda(models.Model):
     _nombre = 'tiendas.tienda'
     _descripcion = 'Define los datos de cada tienda.' 
@@ -15,8 +16,7 @@ class trabajador(models.Model):
     _nombre = 'tiendas.trabajador'
     _descripcion = 'Atributos de trabajador por tienda.'
 
-    #Atributos
-    
+    #atributos
     dniTrabajador = fields.Char(string='DNI',required=True)
     nombreTrabajador = fields.Char(string='Nombre',required=True)
     correoTrabajador = fields.Char(string='Correo',required=True)
