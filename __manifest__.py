@@ -3,7 +3,7 @@
     'name': "tiendas",
 
     'summary': """
-        Lista de tiendas que tenemos.""",
+        Lista de tienda que suministran nuestras frutas.""",
 
     'description': """
         Conjunto de tiendas a las que suministramos nuestras mejores frutas.
