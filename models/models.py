@@ -11,6 +11,8 @@ class tienda(models.Model):
     idTienda = fields.Integer(string='Id ', required=True)
     nombreTienda = fields.Char(string='Nombre tienda ',required=True)
     direccionTienda = fields.Char(string='Direccion tienda ',required=True)
+    #relaccion 
+    trabajador_id = fields.One2many('tiendas.trabajador','tienda_id',string='Tienda')
 
 class trabajador(models.Model):
     _nombre = 'tiendas.trabajador'
@@ -21,6 +23,8 @@ class trabajador(models.Model):
     nombreTrabajador = fields.Char(string='Nombre',required=True)
     correoTrabajador = fields.Char(string='Correo',required=True)
     fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
+    #relaccion
+    tienda_id = fields.Many2one('tiendas.tienda', string='Trabajadores')
 
 
 
