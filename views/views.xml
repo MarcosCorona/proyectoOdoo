@@ -1,7 +1,7 @@
 <odoo>
   <data>
 	  <!-- VISTA TRABAJADORES -->
-	  <record model="ir.ui.view" id="proyectos.trabajador_list_view">
+	  <record model="ir.ui.view" id="tiendas.trabajador_list_view">
 		  <field name="name">tiendas.trabajador.view.tree</field>
 		  <field name="model">tiendas.trabajador</field>
 		  <field name="arch" type="xml">
@@ -14,7 +14,7 @@
 		  </field>
 	  </record>
 	  <!-- VISTA Departamento -->
-	  <record model="ir.ui.view" id="proyectos.tienda_list_view">
+	  <record model="ir.ui.view" id="tiendas.tienda_list_view">
 		  <field name="name">tiendas.tienda.view.tree</field>
 		  <field name="model">tiendas.tienda</field>
 		  <field name="arch" type="xml">
