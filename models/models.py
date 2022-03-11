@@ -4,19 +4,20 @@ from datetime import date
 from dateutil.relativedelta import *
 
 class tienda(models.Model):
-    _nombre = 'tiendas.tienda'
-    _descripcion = 'Define los datos de cada tienda.' 
+    _name = 'tiendas.tienda'
+    _description = 'Define los datos de cada tienda.' 
 
     #atributos
     idTienda = fields.Integer(string='Id ', required=True)
     nombreTienda = fields.Char(string='Nombre tienda ',required=True)
     direccionTienda = fields.Char(string='Direccion tienda ',required=True)
     #relaccion 
-    trabajador_id = fields.One2many('tiendas.trabajador','tienda_id',string='Tienda')
+    trabajador_id = fields.One2many('tiendas.trabajador','tienda_id', string='Tienda')
+    
 
 class trabajador(models.Model):
-    _nombre = 'tiendas.trabajador'
-    _descripcion = 'Atributos de trabajador por tienda.'
+    _name = 'tiendas.trabajador'
+    _description = 'Atributos de trabajador por tienda.'
 
     #atributos
     dniTrabajador = fields.Char(string='DNI',required=True)
