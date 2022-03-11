@@ -13,7 +13,7 @@
 			  </tree>
 		  </field>
 	  </record>
-	  <!-- VISTA Departamento -->
+	  <!-- VISTA TIENDA -->
 	  <record model="ir.ui.view" id="tiendas.tienda_list_view">
 		  <field name="name">tiendas.tienda.view.tree</field>
 		  <field name="model">tiendas.tienda</field>
@@ -29,7 +29,7 @@
 	
 	<record model="ir.actions.act_window" id="tiendas.trabajador_action_window">
 		<field name="name">Trabajadores</field>
-		<field name="res_model">tiendas.tienda</field>
+		<field name="res_model">tiendas.trabajador</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
