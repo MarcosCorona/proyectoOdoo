@@ -12,7 +12,7 @@ class tienda(models.Model):
     nombreTienda = fields.Char(string='Nombre tienda ',required=True)
     direccionTienda = fields.Char(string='Direccion tienda ',required=True)
     #relaccion 
-    #trabajador_id = fields.One2many('tiendas.trabajador','tienda_id', string='Tienda')
+    trabajador_id = fields.One2many('tiendas.trabajador','tienda_id', string='Tienda')
     
 
 class trabajador(models.Model):
