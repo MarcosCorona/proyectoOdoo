@@ -25,7 +25,7 @@ class trabajador(models.Model):
     correoTrabajador = fields.Char(string='Correo',required=True)
     fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
     #relaccion
-    #tienda_id = fields.Many2one('tiendas.tienda', string='Trabajadores')
+    tienda_id = fields.Many2one('tiendas.tienda', string='Trabajadores')
 
 
 
