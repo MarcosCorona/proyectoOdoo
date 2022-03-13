@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 {
+
+    'name': "tiendas",
     'name': "tienda",
 
     'summary': """
