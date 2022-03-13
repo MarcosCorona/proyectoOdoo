@@ -4,8 +4,9 @@
     "\\controllers",
     "\\demo",
     "\\models",
+    "\\security",
     "\\views"
   ],
-  "SelectedNode": "\\views\\templates.xml",
+  "SelectedNode": "\\views\\views.xml",
   "PreviewInSolutionExplorer": false
 }

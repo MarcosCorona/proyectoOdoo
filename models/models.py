@@ -11,6 +11,7 @@ class tienda(models.Model):
     idTienda = fields.Integer(string='Id ', required=True)
     nombreTienda = fields.Char(string='Nombre tienda ',required=True)
     direccionTienda = fields.Char(string='Direccion tienda ',required=True)
+
     #relaccion 
     trabajador_id = fields.One2many('tiendas.trabajador','tienda_id', string='Trabajador')
     
@@ -24,8 +25,32 @@ class trabajador(models.Model):
     nombreTrabajador = fields.Char(string='Nombre',required=True)
     correoTrabajador = fields.Char(string='Correo',required=True)
     fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
+    edad = fields.Integer('Edad', compute='_getEdad')
+
+    #validacion
+    @api.depends('fechaNacimiento')
+    def _getEdad(self):
+        hoy = date.today()
+        for trabajador in self:
+            trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
+    
+    @api.constrains('dniEmpleado')
+    def _checkDNI(self):
+        for trabajador in self:
+            if (len(trabajador.dniEmpleado) > 9 ):
+                raise exceptions.ValidationError("El DNI no puede ser superior 9 caracteres.")
+            if (len(trabajador.dniEmpleado) < 9):
+                raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres.")
+
+    @api.constrains('edad')
+    def _checkEdad(self):
+        for trabajador in self:
+            if(trabajador.edad < 18):
+                raise exceptions.ValidationError("La edad no puede ser inferior a 18.")
+
     #relaccion
     tienda_id = fields.Many2one('tiendas.tienda', string='Tienda')
+
 
 
 
