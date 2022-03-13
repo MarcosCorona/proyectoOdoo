@@ -24,9 +24,10 @@ class trabajador(models.Model):
     nombreTrabajador = fields.Char(string='Nombre',required=True)
     correoTrabajador = fields.Char(string='Correo',required=True)
     fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
-    edad = fields.Integer('Edad', compute='_getEdad')   
+    edad = fields.Integer('Edad', compute='_getEdad')
     #relaccion
     tienda_id = fields.Many2one('tiendas.tienda', string='Tienda')
+    camion_id = fields.One2many('rutas.camion_id', string='Camion')
     #validacion
 
     @api.constrains('dniTrabajador')
