@@ -31,10 +31,10 @@ class trabajador(models.Model):
     @api.depends('fechaNacimiento')
     def _getEdad(self):
         hoy = date.today()
-        for trabajador in self:
+        for trabajador in self:asd
             trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
     
-    @api.constrains('dniEmpleado')
+    @api.constrains('dniTrabajador')
     def _checkDNI(self):
         for trabajador in self:
             if (len(trabajador.dniEmpleado) > 9 ):
