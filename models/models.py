@@ -38,7 +38,7 @@ class trabajador(models.Model):
     @api.depends('fechaNacimiento')
     def _getEdad(self):
         hoy = date.today()
-        for trabajador in self:asd
+        for trabajador in self:
             trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
             
     @api.constrains('edad')
