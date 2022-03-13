@@ -42,9 +42,6 @@ class trabajador(models.Model):
         hoy = date.today()
         for trabajador in self:
             trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
-            if(trabajador.edad < 18):
-                raise exceptions.ValidationError("La edad no puede ser inferior a 18.")
-                
 
     @api.constrains('edad')
     def _checkEdad(self):
