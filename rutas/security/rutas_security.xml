@@ -1,7 +1,6 @@
 <?xml version ="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
-
 		<record model="ir.module.category" id="tiendas.module_category_tiendas">
 			<field name="name">Rutas</field>
 			<field name="description">Trato de rutas</field>
