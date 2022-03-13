@@ -1,47 +1,46 @@
 <odoo>
   <data>
-	  <!-- VISTA TRABAJADORES -->
-	  <record model="ir.ui.view" id="tiendas.trabajador_list_view">
-		  <field name="name">tiendas.trabajador.view.tree</field>
-		  <field name="model">tiendas.trabajador</field>
+	  <!-- VISTA RUTAS -->
+	  <record model="ir.ui.view" id="rutas.ruta_list_view">
+		  <field name="name">rutas.ruta.view.tree</field>
+		  <field name="model">rutas.ruta</field>
 		  <field name="arch" type="xml">
 			  <tree>
-				  <field name="dniTrabajador"/>
-				  <field name="nombreTrabajador"/>
-				  <field name="correoTrabajador"/>
-				  <field name="fechaNacimiento"/>
+				  <field name="idRuta"/>
+				  <field name="dirSalida"/>
+				  <field name="dirEntrega"/>
+				  <field name="tipoViaje"/>
 			  </tree>
 		  </field>
 	  </record>
-	  <!-- VISTA TIENDA -->
-	  <record model="ir.ui.view" id="tiendas.tienda_list_view">
-		  <field name="name">tiendas.tienda.view.tree</field>
-		  <field name="model">tiendas.tienda</field>
+	  <!-- VISTA CAMION -->
+	  <record model="ir.ui.view" id="rutas.camion_list_view">
+		  <field name="name">rutas.camion.view.tree</field>
+		  <field name="model">rutas.camion</field>
 		  <field name="arch" type="xml">
 			  <tree>
-				  <field name="idTienda"/>
-				  <field name="nombreTienda"/>
-				  <field name="direccionTienda"/>
+				  <field name="idCamion"/>
+				  <field name="numBastidor"/>
+				  <field name="matricula"/>
 			  </tree>
 		  </field>
 	  </record>
-
 	
-	<record model="ir.actions.act_window" id="tiendas.trabajador_action_window">
-		<field name="name">Trabajadores</field>
-		<field name="res_model">tiendas.trabajador</field>
+	<record model="ir.actions.act_window" id="rutas.ruta_action_window">
+		<field name="name">Rutas</field>
+		<field name="res_model">rutas.ruta</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
-	<record model="ir.actions.act_window" id="tiendas.tienda_action_window">
-		<field name="name">Tiendas</field>
-		<field name="res_model">tiendas.tienda</field>
+	<record model="ir.actions.act_window" id="rutas.camion_action_window">
+		<field name="name">Camiones</field>
+		<field name="res_model">rutas.camion</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
-	<menuitem name="Tiendas" id="tiendas.menu_root"/>
+	<menuitem name="Rutas" id="rutas.menu_root"/>
 
-	<menuitem name="Trabajadores" id="tiendas.trabajador_menu" parent="tiendas.menu_root" action="tiendas.trabajador_action_window"/>
-	<menuitem name="Tienda" id="tiendas.tienda_menu" parent="tiendas.menu_root" action="tiendas.tienda_action_window"/>
+	<menuitem name="Ruta" id="rutas.ruta_menu" parent="rutas.menu_root" action="rutas.ruta_action_window"/>
+	<menuitem name="Camion" id="rutas.camion_menu" parent="rutas.menu_root" action="rutas.camion_action_window"/>
   </data>
 </odoo>

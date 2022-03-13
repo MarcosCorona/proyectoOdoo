@@ -13,17 +13,17 @@ class ruta(models.Model):
     dirEntrega = fields.Char(string='Fin ruta: ',required=True)
     tipoViaje = fields.Selection(string='Tipo viaje', selection=[('Viaje corto'), ('Viaje medio'),('Viaje largo.')])
     #relaccion 
+    camion_id = fields.Many2many('rutas.camion',string='Camiones:')
 
-class repartidor(models.Model):
-    _name = 'rutas.repartidor'
-    _description = 'Repartidores disponibles.'
+class camion(models.Model):
+    _name = 'rutas.camion'
+    _description = 'Camion disponibles.'
 
     #atributos
-    dniTrabajador = fields.Char(string='DNI',required=True)
-    nombreTrabajador = fields.Char(string='Nombre',required=True)
-    correoTrabajador = fields.Char(string='Correo',required=True)
-    fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
-    edad = fields.Integer('Edad', compute='_getEdad')   
+    idCamion = fields.Char(string='ID:',required=True)
+    numBastidor = fields.Char(string='Nº bastidor',required=True)
+    matricula = fields.Char(string='Matricula',required=True)
     #relaccion
-  
+    ruta_ids = fields.Many2many('rutas.camion',string='Rutas:')
+    trabajador_id = fields.Many2one('tiendas.trabajador','camion_id')
     #validacion
