@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Rutas",
+    'name': "rutas",
 
     'summary': """
         Lista de rutas.""",
@@ -8,7 +8,7 @@
     'description': """
         Conjunto de rutas entre diferentes tiendas.
     """,
-
+        
     'author': "Papaya S.L.",
     'website': "http://www.PapayaFrutas.com",
     # Categories can be used to filter modules in modules listing
