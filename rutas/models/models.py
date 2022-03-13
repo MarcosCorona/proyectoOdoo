@@ -17,7 +17,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-=======
+
 import string
 from odoo import models, fields, api, exceptions
 from datetime import date
@@ -47,4 +47,4 @@ class camion(models.Model):
     ruta_ids = fields.Many2many('rutas.camion',string='Rutas:')
     trabajador_id = fields.Many2one('tiendas.trabajador','camion_id')
     #validacion
->>>>>>> 32f68800703ac4294af370149e9c76497b2b20d4
+
