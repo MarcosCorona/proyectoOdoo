@@ -11,7 +11,6 @@ class tienda(models.Model):
     idTienda = fields.Integer(string='Id ', required=True)
     nombreTienda = fields.Char(string='Nombre tienda ',required=True)
     direccionTienda = fields.Char(string='Direccion tienda ',required=True)
-
     #relaccion 
     trabajador_id = fields.One2many('tiendas.trabajador','tienda_id', string='Trabajador')
     
@@ -37,9 +36,9 @@ class trabajador(models.Model):
     @api.constrains('dniTrabajador')
     def _checkDNI(self):
         for trabajador in self:
-            if (len(trabajador.dniEmpleado) > 9 ):
+            if (len(trabajador.dniTrabajador) > 9 ):
                 raise exceptions.ValidationError("El DNI no puede ser superior 9 caracteres.")
-            if (len(trabajador.dniEmpleado) < 9):
+            if (len(trabajador.dniTrabajador) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres.")
 
     @api.constrains('edad')
