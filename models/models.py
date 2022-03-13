@@ -36,6 +36,8 @@ class trabajador(models.Model):
                 raise exceptions.ValidationError("El DNI no puede ser superior 9 caracteres.")
             if (len(trabajador.dniTrabajador) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres.")
+            if(trabajador.edad < 18):
+                raise exceptions.ValidationError("El trabajador no puede ser menor de edad.")
 
     @api.depends('fechaNacimiento')
     def _getEdad(self):
