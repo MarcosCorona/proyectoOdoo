@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Tiendas",
+    'name': "tienda",
 
     'summary': """
         Lista de tienda que suministran nuestras frutas.""",
