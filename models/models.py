@@ -28,6 +28,7 @@ class trabajador(models.Model):
     #relaccion
     tienda_id = fields.Many2one('tiendas.tienda', string='Tienda')
     #validacion
+
     @api.constrains('dniTrabajador')
     def _checkDNI(self):
         for trabajador in self:
@@ -35,12 +36,13 @@ class trabajador(models.Model):
                 raise exceptions.ValidationError("El DNI no puede ser superior 9 caracteres.")
             if (len(trabajador.dniTrabajador) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres.")
+
     @api.depends('fechaNacimiento')
     def _getEdad(self):
         hoy = date.today()
         for trabajador in self:
             trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
-            
+
     @api.constrains('edad')
     def _checkEdad(self):
         for trabajador in self:
