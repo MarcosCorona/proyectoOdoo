@@ -27,7 +27,12 @@ class trabajador(models.Model):
     edad = fields.Integer('Edad', compute='_getEdad')   
     #relaccion
     tienda_id = fields.Many2one('tiendas.tienda', string='Tienda')
-    
+    #validacion
+    @api.depends('fechaNacimiento')
+    def _getEdad(self):
+        hoy = date.today()
+        for trabajador in self:asd
+            trabajador.edad = relativedelta(hoy, trabajador.fechaNacimiento).years
 
 
 
